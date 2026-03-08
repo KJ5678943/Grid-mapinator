@@ -1,0 +1,23 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build outputs
+*.o
+*.out
+mapgen
+mapview
+bmp_to_jpg
+
+# Python
+__pycache__/
+*.pyc
+
+# Images (optional - remove these lines if you want to include them)
+# images/
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+DerivedData/
