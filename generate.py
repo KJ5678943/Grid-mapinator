@@ -12,8 +12,8 @@ def usage(prog: str) -> None:
     )
     print(f"Example: {prog} 80 60 0.4 9 36 city.txt", file=sys.stderr)
     print("Outputs:", file=sys.stderr)
-    print("  txt/<output.txt>", file=sys.stderr)
-    print("  images/<output_base>.jpg", file=sys.stderr)
+    print("  map_txt/<output.txt>", file=sys.stderr)
+    print("  map_preview/<output_base>.jpg", file=sys.stderr)
 
 
 def run_cmd(cmd: list[str], cwd: Path | None = None) -> None:
@@ -27,8 +27,8 @@ def main() -> int:
         return 1
 
     script_dir = Path(__file__).resolve().parent
-    txt_dir = script_dir / "txt"
-    images_dir = script_dir / "images"
+    txt_dir = script_dir / "map_txt"
+    images_dir = script_dir / "map_preview"
     sauce_dir = script_dir / "Sauce"
 
     txt_dir.mkdir(parents=True, exist_ok=True)

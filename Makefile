@@ -7,22 +7,23 @@ JPEG_CFLAGS := $(shell pkg-config --cflags libjpeg 2>/dev/null)
 JPEG_LIBS := $(shell pkg-config --libs libjpeg 2>/dev/null)
 
 BIN_DIR := Sauce
-IMAGES_DIR := images
-TXT_DIR := txt
+IMAGES_DIR := map_preview
+TXT_DIR := map_txt
+SRC_DIR := Source
 
 MAPGEN_BIN := $(BIN_DIR)/mapgen
-MAPGEN_SRC := mapgen.c
+MAPGEN_SRC := $(SRC_DIR)/mapgen.c
 MAPVIEW_BIN := $(BIN_DIR)/mapview
-MAPVIEW_SRC := mapview.c
+MAPVIEW_SRC := $(SRC_DIR)/mapview.c
 BMP2JPG_BIN := $(BIN_DIR)/bmp_to_jpg
-BMP2JPG_SRC := bmp_to_jpg.c
+BMP2JPG_SRC := $(SRC_DIR)/bmp_to_jpg.c
 
 .PHONY: all clean run-mapview dirs
 
 all: dirs $(MAPGEN_BIN) $(MAPVIEW_BIN) $(BMP2JPG_BIN)
 
 dirs:
-	mkdir -p $(BIN_DIR) $(IMAGES_DIR) $(TXT_DIR)
+	mkdir -p $(BIN_DIR) $(IMAGES_DIR) $(TXT_DIR) $(SRC_DIR)
 
 $(MAPGEN_BIN): $(MAPGEN_SRC)
 	$(CC) $(CFLAGS) $< -o $@

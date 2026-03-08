@@ -3,12 +3,12 @@
 .AppleDouble
 .LSOverride
 
-# Build outputs
+# Build outputs (compiled binaries in Sauce/)
+Sauce/mapgen
+Sauce/mapview
+Sauce/bmp_to_jpg
 *.o
 *.out
-mapgen
-mapview
-bmp_to_jpg
 
 # Python
 __pycache__/
